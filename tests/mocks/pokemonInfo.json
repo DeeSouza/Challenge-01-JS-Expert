@@ -1,0 +1,62 @@
+{
+  "bulbasaur": {
+    "moves": [
+      {
+        "move": {
+          "name": "razor-wind",
+          "url": "https://pokeapi.co/api/v2/move/13/"
+        }
+      },
+      {
+        "move": {
+          "name": "swords-dance",
+          "url": "https://pokeapi.co/api/v2/move/14/"
+        }
+      },
+      {
+        "move": { "name": "cut", "url": "https://pokeapi.co/api/v2/move/15/" }
+      }
+    ],
+    "name": "bulbasaur"
+  },
+  "ivysaur": {
+    "moves": [
+      {
+        "move": {
+          "name": "swords-dance",
+          "url": "https://pokeapi.co/api/v2/move/14/"
+        }
+      },
+      {
+        "move": {
+          "name": "cut",
+          "url": "https://pokeapi.co/api/v2/move/15/"
+        }
+      },
+      {
+        "move": { "name": "bind", "url": "https://pokeapi.co/api/v2/move/20/" }
+      }
+    ],
+    "name": "ivysaur"
+  },
+  "venusaur": {
+    "moves": [
+      {
+        "move": {
+          "name": "swords-dance",
+          "url": "https://pokeapi.co/api/v2/move/14/"
+        }
+      },
+      {
+        "move": {
+          "name": "cut",
+          "url": "https://pokeapi.co/api/v2/move/15/"
+        }
+      },
+      {
+        "move": { "name": "bind", "url": "https://pokeapi.co/api/v2/move/20/" }
+      }
+    ],
+    "name": "venusaur"
+  }
+}

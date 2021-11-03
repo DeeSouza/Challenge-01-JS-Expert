@@ -1,0 +1,19 @@
+{
+  "name": "poke-api-challenge-js",
+  "version": "1.0.0",
+  "description": "PokeAPI Challenge JS Expert",
+  "main": "src/api.js",
+  "author": "Diego Souza",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/api.js",
+    "test": "npx mocha -w --parallel ./tests/**/*.test.js",
+    "test:cov": "npx nyc npx mocha --parallel ./tests/**/*.test.js"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "sinon": "^11.1.2",
+    "supertest": "^6.1.6"
+  }
+}
