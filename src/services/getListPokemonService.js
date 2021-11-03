@@ -9,10 +9,10 @@ class GetListPokemonService {
     this.teamRepository = new teamRepository();
   }
 
-  async execute() {
-    const teamRepository = await this.teamRepository.pokemons();
+  execute() {
+    const pokemons = this.teamRepository.pokemons();
 
-    return teamRepository;
+    return pokemons;
   }
 
   async getPokemons() {

@@ -7,8 +7,8 @@ class GetPokemonService {
     this.teamRepository = new teamRepository();
   }
 
-  async execute(urlPokemon) {
-    const pokemon = await this.teamRepository.pokemon(urlPokemon);
+  execute(urlPokemon) {
+    const pokemon = this.teamRepository.pokemon(urlPokemon);
 
     return pokemon;
   }
@@ -24,7 +24,7 @@ class GetPokemonService {
       };
     });
 
-    const response = await Promise.all(pokemonInfo);
+    const response = Promise.all(pokemonInfo);
 
     return response;
   }

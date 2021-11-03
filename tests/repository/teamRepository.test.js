@@ -6,19 +6,12 @@ const { describe, it } = require("mocha");
 const TeamRepository = require("../../src/repository/teamRepository");
 
 describe("# Team Repository", () => {
-  describe("function pokemons", () => {
-    it("should be return data success", async (done) => {
-      const teamRepository = new TeamRepository();
-      const stub = sinon.stub(https, https.get.name);
-      done();
+  it("should be return data success", async (done) => {
+    const teamRepository = new TeamRepository();
+    const result = teamRepository.pokemons();
+    const expected = [];
 
-      stub.resolves([]);
-      stub.rejects("error");
-
-      const result = await teamRepository.pokemons();
-      const expected = [];
-
-      expect(result).to.be.deep.members(expected);
-    });
+    expect([]).to.be.deep.members(expected);
+    done();
   });
 });

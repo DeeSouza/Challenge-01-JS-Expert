@@ -1,47 +1,22 @@
-const https = require("https");
-const baseUrl = "https://pokeapi.co/api/v2/pokemon";
+const PokemonClient = require("../client/pokemonClient");
 
 class TeamRepository {
-  async pokemons() {
-    const request = new Promise((resolve, reject) => {
-      https
-        .get(baseUrl, (response) => {
-          var body = "";
+  #api;
+  #endpoint;
 
-          response.on("data", function (chunk) {
-            body += chunk;
-          });
+  constructor() {
+    this.#api = new PokemonClient();
+    this.#endpoint = "https://pokeapi.co/api/v2/pokemon";
+  }
 
-          response.on("end", function () {
-            return resolve(JSON.parse(body));
-          });
-        })
-        .on("error", (error) => {
-          reject(error);
-        });
-    });
+  pokemons() {
+    const request = this.#api.createRequest(this.#endpoint);
 
     return request;
   }
 
-  async pokemon(url) {
-    const request = new Promise((resolve, reject) => {
-      https
-        .get(url, (response) => {
-          var body = "";
-
-          response.on("data", function (chunk) {
-            body += chunk;
-          });
-
-          response.on("end", function () {
-            return resolve(JSON.parse(body));
-          });
-        })
-        .on("error", (error) => {
-          reject(error);
-        });
-    });
+  pokemon(url) {
+    const request = this.#api.createRequest(url);
 
     return request;
   }
