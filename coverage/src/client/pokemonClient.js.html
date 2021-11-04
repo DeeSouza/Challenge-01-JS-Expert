@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.33% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,39 +82,27 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,30 +110,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const https = require("https");
 &nbsp;
 class PokemonClient {
-  #endpoint;
+<span class="fstat-no" title="function not covered" >  as</span>ync makeRequest(endpoint) {
+    const request = <span class="cstat-no" title="statement not covered" >new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+      var chunks = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
-  async build() {
-    const request = new Promise((resolve, reject) =&gt; {
-      https.get(`${this.#endpoint}`, <span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {
-        var body = <span class="cstat-no" title="statement not covered" >"";</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >        response.on("data", <span class="fstat-no" title="function not covered" >fu</span>nction (chunk) {</span>
-<span class="cstat-no" title="statement not covered" >          body += chunk;</span>
+<span class="cstat-no" title="statement not covered" >      https.get(endpoint, <span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        response.on("data", <span class="fstat-no" title="function not covered" >fu</span>nction (data) {</span>
+<span class="cstat-no" title="statement not covered" >          chunks.push(data);</span>
         });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        response.on("end", <span class="fstat-no" title="function not covered" >fu</span>nction () {</span>
-<span class="cstat-no" title="statement not covered" >          return resolve(JSON.parse(body));</span>
+<span class="cstat-no" title="statement not covered" >        response.on("error", reject);</span>
+<span class="cstat-no" title="statement not covered" >        response.on("end", <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+          const data = <span class="cstat-no" title="statement not covered" >Buffer.concat(chunks);</span>
+<span class="cstat-no" title="statement not covered" >          resolve(JSON.parse(data));</span>
         });
       });
     });
 &nbsp;
-    return request;
-  }
-&nbsp;
-  createRequest(endpoint) {
-    this.#endpoint = endpoint;
-&nbsp;
-    return this.build();
+<span class="cstat-no" title="statement not covered" >    return request;</span>
   }
 }
 &nbsp;
@@ -157,7 +139,7 @@ module.exports = PokemonClient;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 03 2021 15:54:20 GMT-0300 (Horário Padrão de Brasília)
+                at Thu Nov 04 2021 09:35:39 GMT-0300 (Horário Padrão de Brasília)
             </div>
         </div>
         <script src="../../prettify.js"></script>

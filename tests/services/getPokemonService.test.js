@@ -3,11 +3,15 @@ const { expect } = require("chai");
 const { describe, it } = require("mocha");
 
 const GetPokemonService = require("../../src/services/getPokemonService");
-const mockData = require("../mocks/pokemonInfo.json");
+const {
+  teamRepositoryMock,
+  mocks,
+  urls,
+} = require("../repository/teamRepositoryMock");
 
 describe("# Get Pokemon Service", () => {
-  it("should return info of three pokemons random", async () => {
-    const getPokemon = new GetPokemonService();
+  it("should return info of three pokemons", async () => {
+    const getPokemon = new GetPokemonService(teamRepositoryMock);
     const stub = sinon.stub(getPokemon, getPokemon.execute.name);
 
     const pokemons = [
@@ -17,7 +21,7 @@ describe("# Get Pokemon Service", () => {
     ];
 
     pokemons.map((pokemon) =>
-      stub.withArgs(pokemon.url).resolves(mockData[pokemon.name])
+      stub.withArgs(pokemon.url).resolves(mocks.mockDataInfo[pokemon.name])
     );
 
     const result = await getPokemon.getInfoPokemons(pokemons);
@@ -29,5 +33,14 @@ describe("# Get Pokemon Service", () => {
     ];
 
     expect(result).to.have.deep.members(expected);
+  });
+
+  it("should return info of a pokemon execute", async () => {
+    const getPokemon = new GetPokemonService(teamRepositoryMock);
+    const result = await getPokemon.execute(urls.urlPokemonInfo1);
+
+    const expected = mocks.mockDataInfo.bulbasaur;
+
+    expect(result).to.have.equal(expected);
   });
 });

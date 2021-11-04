@@ -1,14 +1,12 @@
-const teamRepository = require("../repository/teamRepository");
-
 class GetPokemonService {
   teamRepository;
 
-  constructor() {
-    this.teamRepository = new teamRepository();
+  constructor(teamRepository) {
+    this.teamRepository = teamRepository;
   }
 
   execute(urlPokemon) {
-    const pokemon = this.teamRepository.pokemon(urlPokemon);
+    const pokemon = this.teamRepository.findPokemonByUrl(urlPokemon);
 
     return pokemon;
   }

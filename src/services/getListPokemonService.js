@@ -1,16 +1,14 @@
-const teamRepository = require("../repository/teamRepository");
-
 const LIMIT_POKEMON = 3;
 
 class GetListPokemonService {
   teamRepository;
 
-  constructor() {
-    this.teamRepository = new teamRepository();
+  constructor(teamRepository) {
+    this.teamRepository = teamRepository;
   }
 
   execute() {
-    const pokemons = this.teamRepository.pokemons();
+    const pokemons = this.teamRepository.getAllPokemons();
 
     return pokemons;
   }

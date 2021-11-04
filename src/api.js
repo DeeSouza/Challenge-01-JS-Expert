@@ -1,6 +1,8 @@
 const http = require("http");
+
 const GetListPokemonService = require("./services/getListPokemonService");
 const GetPokemonService = require("./services/getPokemonService");
+const TeamRepository = require("../src/repository/teamRepository");
 
 const routes = {
   default: (request, response) => {
@@ -10,8 +12,9 @@ const routes = {
   },
 
   "/team:get": async (request, response) => {
-    const getListPokemon = new GetListPokemonService();
-    const getPokemon = new GetPokemonService();
+    const teamRepository = new TeamRepository();
+    const getListPokemon = new GetListPokemonService(teamRepository);
+    const getPokemon = new GetPokemonService(teamRepository);
 
     const pokemons = await getListPokemon.getPokemons();
     const result = await getPokemon.getInfoPokemons(pokemons);

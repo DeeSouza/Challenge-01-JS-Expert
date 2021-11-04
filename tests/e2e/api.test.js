@@ -1,4 +1,3 @@
-const assert = require("assert");
 const request = require("supertest");
 const { describe, it } = require("mocha");
 
@@ -13,7 +12,10 @@ describe("# API Suit Test", () => {
 
   describe("Route endpoint /team", () => {
     it("should request return HTTP status code 200", async (done) => {
-      await request(app).get("/team").expect(200, done());
+      await request(app)
+        .get("/team")
+        .expect("Content-Type", /json/)
+        .expect(200, done());
     });
   });
 });
