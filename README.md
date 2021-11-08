@@ -33,5 +33,5 @@ Deve retornar um array com 3 pokemóns aleatórios, contendo seus respectivos `n
     - [x] Deve retornar um objeto JSON contendo um array com 3 pokemóns, cada um com seus respectivos `name (String)` e `moves (String[])`
 
 - Testes
-  - [ ] Deve ter cobertura de testes end-2-end e unitários
-  - [ ] 100% de code coverage
+  - [x] Deve ter cobertura de testes end-2-end e unitários
+  - [x] 100% de code coverage
