@@ -17,13 +17,13 @@ const routes = {
     const getPokemon = new GetPokemonService(teamRepository);
 
     const pokemons = await getListPokemon.getPokemons();
-    const result = await getPokemon.getInfoPokemons(pokemons);
+    const infosPokemons = await getPokemon.getInfoPokemons(pokemons);
 
     response.writeHead(200, {
       "Content-Type": "application/json",
     });
 
-    return response.end(JSON.stringify(result));
+    return response.end(JSON.stringify(infosPokemons));
   },
 };
 
