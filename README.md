@@ -1,26 +1,38 @@
+### Dependencies
+
+```sh
+npm install -g nodemon
+```
+
+### Install
+
+```sh
+npm install
+```
+
+### Run Project
+
+```sh
+npm run start
+```
+
+### Run Test
+
+```sh
+npm run test
+npm run test:cov
+```
+
 ### Funcionalidades
 
 1. `GET /`
 
-Deve ser a rota padrão da aplicação ao tentar acessar qualquer rota inexistente. (ex.: `/hi`, `/hello`)
+Route default.
 
 2. `GET /team`
 
-Deve retornar um array com 3 pokemóns aleatórios, contendo seus respectivos `name` e `moves`, (mostrando apenas um array de strings com os 3 primeiros `moves` presentes na API. ex.: `["mega-punch","fire-punch","thunder-punch"]`).
-
-### Testes
-
-- [ ] mocks
-- [ ] stubs
-- [ ] spies
-- [ ] testes end-2-end
-- [ ] testes unitários
-- [ ] 100% de code coverage
-
-### Extras
-
-- [ ] TDD e BDD, será que rola? Acho que vale a tentativa!
-- [ ] Que tal consumir a API sem usar libs externas? o módulo `https` do node pode ser bem interessante!
+Return an array with 3 pokemons random. Each pokemon have the follow properties: `name` and `moves`.
+And `moves` is an array with the first three names.
 
 ### Checklist features
 
