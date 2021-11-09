@@ -23,7 +23,7 @@ npm run test
 npm run test:cov
 ```
 
-### Funcionalidades
+### Features
 
 1. `GET /`
 
@@ -34,7 +34,7 @@ Route default.
 Return an array with 3 pokemons random. Each pokemon have the follow properties: `name` and `moves`.
 And `moves` is an array with the first three names.
 
-### Checklist features
+### Checklist Features
 
 - Web API
 
